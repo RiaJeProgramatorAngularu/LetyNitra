@@ -1,0 +1,87 @@
+<div class="login-wrap">
+  <div class="login-html">
+    <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+    <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+
+    <div class="login-form">
+
+      <form [formGroup]="loginForm" (ngSubmit)="loginWithEmailAndPassword()">
+        <div class="sign-in-htm">
+          <div class="group">
+            <label for="user" class="label">Username</label>
+            <input id="user" formControlName="username" type="text" class="input">
+          </div>
+          <!--        <ng-container *ngIf="loginForm.controls['username'].hasError('required')">-->
+          <!--          <p>Username is required</p>-->
+          <!--        </ng-container>-->
+          <div class="group">
+            <label for="pass" class="label">Password</label>
+            <input id="pass" formControlName="password" type="password" class="input" data-type="password">
+          </div>
+          <div class="group">
+            <input id="check" type="checkbox" class="check" checked>
+            <label for="check"><span class="icon"></span> Keep me Signed in</label>
+          </div>
+          <!--        <div class="group">-->
+          <!--          <input (click)="loginWithGoogle()" id="logGoogle" class="button" value="Sign In with Google">-->
+          <!--        </div>-->
+          <div class="group">
+            <input (click)="loginWithEmailAndPassword()" type="submit" class="button" value="Sign In">
+          </div>
+          <div class="hr"></div>
+          <div class="foot-lnk">
+            <a href="#forgot">Forgot Password?</a>
+          </div>
+        </div>
+      </form>
+
+      <!-- <form formGroupName="registerForm"></form> -->
+      <form [formGroup]="registerForm" (ngSubmit)="registerWithEmailAndPassword()">
+        <div class="sign-up-htm">
+          <div class="group">
+            <label for="user2" class="label">Username</label>
+            <input id="user2" formControlName="username" type="text" class="input">
+          </div>
+          <div class="group">
+            <label for="pass2" class="label">Password</label>
+            <input id="pass2" formControlName="password" type="password" class="input" data-type="password">
+          </div>
+          <div class="group">
+            <label for="rep-pass2" class="label">Repeat Password</label>
+            <input id="rep-pass2" formControlName="repeatPassword" type="password" class="input" data-type="password">
+          </div>
+        <!-- <div>
+           <div *ngIf="registerFormSubmitted && registerForm.get('password')?.hasError('minlength')" class="msgErr"> -->
+            <!-- <label class="label">Vyplnte heslo</label> -->
+          <!-- </div>  -->
+
+          <div class="group">
+            <label for="email2" class="label">Email Address</label>
+            <input id="email2" formControlName="email" type="text" class="input">
+          </div>
+          <div class="group">
+            <input (click)="registerWithEmailAndPassword()"
+
+                   type="submit" class="button"
+                   value="Sign Up">
+          </div>
+          <!-- <div class="group">
+            <div>
+              <input type="radio" id="student" formControlName="role" value="student" name="userRole">
+              <label for="student">Student</label>
+
+              <input type="radio" id="teacher" formControlName="role" value="teacher" name="userRole">
+              <label for="teacher">Teacher</label>
+
+            </div>
+          </div> -->
+          <div class="hr"></div>
+          <div class="foot-lnk">
+            <label routerLink="/prihlasenie" routerLinkActive="active">Already Member?</label>
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>

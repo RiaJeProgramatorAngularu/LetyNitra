@@ -1,0 +1,21 @@
+h1 {
+  text-align: center;
+}
+.textAlligment {
+  text-align: justify;
+  letter-spacing: 3px;
+}
+.alligmentImg {
+  position: relative;
+  text-align: center;
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 20px;
+  left: 23%;
+}
+.fontStyle {
+  position: relative;
+  opacity:80%;
+  letter-spacing: 2px;
+}
